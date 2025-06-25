@@ -1,0 +1,209 @@
+
+@page {
+  size: A4 landscape;
+  margin: 0;
+}
+
+body {
+	
+}
+
+table, tr, td {
+	border: 1px solid black;
+}
+
+table.jacket_content, table.jacket_content tr, table.jacket_content td {
+	border: 0;
+	padding: 0;
+}
+
+table.jacket_content {
+	width: 100%;
+}
+
+div#canvas_area {
+	width: 12cm;
+	height: 12cm;
+}
+
+div#face {
+	width: calc(12cm - 16px);
+	height: calc(12cm - 16px);
+	padding: 8px;
+
+	display: inline-block;
+	word-break: break-all;
+	float: inline-start;
+	display: flex;
+}
+
+div#back {
+	width: 12cm;
+	height: 12cm;
+
+	display: inline-block;
+	word-break: break-all;
+	float: inline-start;
+}
+
+div#face_title {
+	width: 100%;
+
+	font-size: large;
+	font-weight: bold;
+	vertical-align: middle;
+	word-break: break-word;
+}
+
+table#jacket_table.large div#face_title {
+	font-size: x-large;
+}
+
+table#jacket_table.small div#face_title {
+	font-size: medium;
+}
+
+table#jacket_table.xsmall div#face_title {
+	font-size: small;
+}
+
+div#face_title.topleft {
+	text-align: left;
+	margin: 0 0 auto 0;
+}
+
+div#face_title.top {
+	text-align: center;
+	margin: 0 0 auto 0;
+}
+
+div#face_title.topright {
+	text-align: right;
+	margin: 0 0 auto 0;
+}
+
+div#face_title.left {
+	text-align: left;
+	margin: auto;
+}
+
+div#face_title.center {
+	text-align: center;
+	margin: auto;
+}
+
+div#face_title.right {
+	text-align: right;
+	margin: auto;
+}
+
+div#face_title.bottomleft {
+	text-align: left;
+	margin: auto 0 0 0;
+}
+
+div#face_title.bottom {
+	text-align: center;
+	margin: auto 0 0 0;
+}
+
+div#face_title.bottomright {
+	text-align: right;
+	margin: auto 0 0 0;
+}
+
+div#title {
+	position: relative;
+	left: 2%;
+	top: 1.5%;
+	width: 96%;
+	height: 1lh;
+
+	font-size: large;
+	font-weight: bold;
+
+	display: -webkit-box;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
+}
+
+table#jacket_table.large div#title {
+	font-size: x-large;
+}
+
+table#jacket_table.small div#title {
+	font-size: medium;
+}
+
+table#jacket_table.xsmall div#title {
+	font-size: small;
+}
+
+div#content {
+	position: relative;
+	left: 2%;
+	top: 2.4%;
+	width: 96%;
+
+	font-size: medium;
+}
+
+table#jacket_table.large div#content {
+	font-size: large;
+}
+
+table#jacket_table.small div#content {
+	font-size: small;
+}
+
+table#jacket_table.xsmall div#content {
+	font-size: x-small;
+}
+
+div#content_area, div#info_area {
+	width: calc(12cm - 20px);
+	height: 6cm;
+	padding: 8px;
+}
+
+td.song_number {
+	text-align: right;
+	padding-right: 4px !important;
+	width: 1em;
+	word-break: keep-all;
+}
+
+td.song_duration {
+	text-align: right;
+	padding-left: 4px !important;
+	width: 5em;
+	max-width: 5em;
+	word-break: keep-all;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+td.song_title {
+	width: 10cm;
+	max-width: 10cm;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+div.dark div {
+	color: #ffffff;
+}
+
+textarea#input_content {
+	width: calc(12cm - 20px);
+	height: 80%;
+}
+
+table.alignment_table {
+	display: inline-block;
+	vertical-align: bottom;
+}

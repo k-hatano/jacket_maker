@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html	PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja">
+
+<head>
+    <title>ジャケットメーカー</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <link rel="stylesheet" type="text/css" media="print" href="style.css" />
+    <script type="text/javascript" src="script.js"></script>
+</head>
+
+<body id="main">
+    <table id="jacket_table" class="medium">
+        <tr>
+            <td colspan="2">
+                <div id="back" class="light">
+                    <div id="title">Symphony No. 5 in C Minor</div>
+                    <div id="content"></div>
+                </div><div id="face" class="light">
+                    <div id="face_title" class="center">Symphony No. 5 in C Minor</div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td><div id="content_area">
+                <input type="text" id="input_title" size="48" value="Symphony No. 5 in C Minor, Op. 67 / Beethoven" /><br />
+                <textarea id="input_content">I. Allegro Con Brio	7:21
+II. Andante Con Moto	10:01
+III. Scherzo: Allegro	5:08
+IV. Finale: Allegro	11:01</textarea>
+            </div></td>
+            <td><div id="info_area">
+                <label for="input_background_color">背景色:</label>&nbsp;<input type="color" id="input_background_color" value="#FFFFFF"><br />
+                文字サイズ:&nbsp;
+                    <input type="radio" id="font_size_xsmall" name="font_size" class="font_size_radio" value="xsmall" /><label for="font_size_xsmall">極小</label>&nbsp;
+                    <input type="radio" id="font_size_small" name="font_size" class="font_size_radio" value="small" /><label for="font_size_small">小</label>&nbsp;
+                    <input type="radio" id="font_size_medium" name="font_size" class="font_size_radio" value="medium" checked="checked" /><label for="font_size_medium">中</label>&nbsp;
+                    <input type="radio" id="font_size_large" name="font_size" class="font_size_radio" value="large" /><label for="font_size_large">大</label><br />
+                文字揃え:&nbsp;
+                <table class="alignment_table">
+                    <tr>
+                        <td><input type="radio" name="alignment" class="alignment_radio" value="topleft" /></td>
+                        <td><input type="radio" name="alignment" class="alignment_radio" value="top" /></td>
+                        <td><input type="radio" name="alignment" class="alignment_radio" value="topright" /></td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" name="alignment" class="alignment_radio" value="left" /></td>
+                        <td><input type="radio" name="alignment" class="alignment_radio" value="center" checked="checked" /></td>
+                        <td><input type="radio" name="alignment" class="alignment_radio" value="right" /></td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" name="alignment" class="alignment_radio" value="bottomleft" /></td>
+                        <td><input type="radio" name="alignment" class="alignment_radio" value="bottom" /></td>
+                        <td><input type="radio" name="alignment" class="alignment_radio" value="bottomright" /></td>
+                    </tr>
+                </table>
+                <hr />
+                <button  onclick="window.print(); return false;">印刷</button >
+            </div>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
