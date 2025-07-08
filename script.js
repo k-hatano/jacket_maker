@@ -1,4 +1,7 @@
 
+var gAlignment = "center";
+var gFortyFiveRotate = "";
+var gThreeDTransform = "";
 
 onload = function() {
     initialize();
@@ -17,6 +20,8 @@ function initialize() {
     Array.from(document.getElementsByClassName("font_size_radio")).forEach(function(item){
         item.addEventListener("click", fontSizeChanged);
     });
+    document.getElementById("input_fortyfive_rotate").addEventListener("click", fortyFiveRotateChanged);
+    document.getElementById("input_threed_transform").addEventListener("click", threeDTransformChanged);
 }
 
 function backgroundColorChanged() {
@@ -29,7 +34,7 @@ function backgroundColorChanged() {
     var b = parseInt(rawValue.substring(5, 7), 16);
     // var brightness = (r + g + b) / 3;
     var brightness = g;
-    if (brightness >= 102) {
+    if (brightness >= 130) {
         document.getElementById("face").className = "light";
         document.getElementById("back").className = "light";
     } else {
@@ -39,8 +44,16 @@ function backgroundColorChanged() {
 }
 
 function contentChanged() {
-    document.getElementById("title").innerText = document.getElementById("input_title").value;
-    document.getElementById("face_title").innerText = document.getElementById("input_title").value;
+    var title = document.getElementById("input_title").value;
+    var titleSplitted = title.split("\t");
+
+    if (titleSplitted.length >= 2) {
+        document.getElementById("title").innerText = titleSplitted[0] + " / " + titleSplitted[1];
+        document.getElementById("face_title").innerHTML = escapeText(titleSplitted[0]) + "<br>" + escapeText(titleSplitted[1]);
+    } else {
+        document.getElementById("title").innerText = titleSplitted[0];
+        document.getElementById("face_title").innerText = titleSplitted[0];
+    }
 
     var contentByLine = document.getElementById("input_content").value.split("\n");
 
@@ -65,10 +78,31 @@ function contentChanged() {
 }
 
 function alignmentChanged(event) {
-    var alignment = undefined;
     if (event != undefined && event.target != undefined && event.target.value != undefined) {
-        alignment = event.target.value;
-        document.getElementById("face_title").className = alignment;
+        gAlignment = event.target.value;
+        document.getElementById("face_title").className = gAlignment + " " + gFortyFiveRotate + " " + gThreeDTransform;
+    }
+}
+
+function fortyFiveRotateChanged(event) {
+    if (event != undefined && event.target != undefined) {
+        if (event.target.checked) {
+            gFortyFiveRotate = "fortyfive_rotate";
+        } else {
+            gFortyFiveRotate = "";
+        }
+        document.getElementById("face_title").className = gAlignment + " " + gFortyFiveRotate + " " + gThreeDTransform;
+    }
+}
+
+function threeDTransformChanged(event) {
+    if (event != undefined && event.target != undefined) {
+        if (event.target.checked) {
+            gThreeDTransform = "threed_transform";
+        } else {
+            gThreeDTransform = "";
+        }
+        document.getElementById("face_title").className = gAlignment + " " + gFortyFiveRotate + " " + gThreeDTransform;
     }
 }
 

@@ -31,6 +31,7 @@ div#face {
 	height: calc(12cm - 16px);
 	padding: 8px;
 
+
 	display: inline-block;
 	word-break: break-all;
 	float: inline-start;
@@ -38,12 +39,18 @@ div#face {
 }
 
 div#back {
-	width: 12cm;
+	width: calc(12cm - 1px);
 	height: 12cm;
+	border-right: 1px solid #ffffff44;
 
 	display: inline-block;
 	word-break: break-all;
 	float: inline-start;
+	overflow: hidden;
+}
+
+div.light#back {
+	border-right: 1px solid #ffffff44;
 }
 
 div#face_title {
@@ -52,7 +59,19 @@ div#face_title {
 	font-size: large;
 	font-weight: bold;
 	vertical-align: middle;
-	word-break: break-word;
+	word-break: keep-all;
+}
+
+div#face_title.fortyfive_rotate {
+	rotate: -45deg;
+}
+
+div#face_title.threed_transform {
+	transform: perspective(3.5cm) rotate3d(-1, 1, 0, 20deg) translate(1.8cm, 0);
+}
+
+table#jacket_table.xlarge div#face_title {
+	font-size: xx-large;
 }
 
 table#jacket_table.large div#face_title {
@@ -130,6 +149,10 @@ div#title {
 	-webkit-line-clamp: 3;
 }
 
+table#jacket_table.xlarge div#title {
+	font-size: xx-large;
+}
+
 table#jacket_table.large div#title {
 	font-size: x-large;
 }
@@ -149,6 +172,10 @@ div#content {
 	width: 96%;
 
 	font-size: medium;
+}
+
+table#jacket_table.xlarge div#content {
+	font-size: x-large;
 }
 
 table#jacket_table.large div#content {
@@ -187,8 +214,8 @@ td.song_duration {
 }
 
 td.song_title {
-	width: 10cm;
-	max-width: 10cm;
+	width: 9.8cm;
+	max-width: 9.8cm;
 	text-overflow: ellipsis;
 	overflow: hidden;
 	white-space: nowrap;
@@ -206,4 +233,18 @@ textarea#input_content {
 table.alignment_table {
 	display: inline-block;
 	vertical-align: bottom;
+}
+
+div.vertical {
+	display: inline-block;
+}
+
+div#songs_number {
+	position: absolute;
+  width: 12cm;
+  text-align: center;
+  font-size: small;
+  top: calc(12cm - 0.5lh);
+  height: 1lh;
+  display: inline-block;
 }

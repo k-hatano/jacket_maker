@@ -15,28 +15,48 @@
         <tr>
             <td colspan="2">
                 <div id="back" class="light">
-                    <div id="title">Symphony No. 5 in C Minor, Op. 67 / Beethoven</div>
+                    <div id="title"></div>
                     <div id="content"></div>
+                    <!-- <div id="songs_number">全 0 曲</div> -->
                 </div><div id="face" class="light">
-                    <div id="face_title" class="center">Symphony No. 5 in C Minor, Op. 67 / Beethoven</div>
+                    <div id="face_title" class="center"></div>
                 </div>
             </td>
         </tr>
         <tr>
             <td><div id="content_area">
-                <input type="text" id="input_title" size="48" value="Symphony No. 5 in C Minor, Op. 67 / Beethoven" /><br />
-                <textarea id="input_content">I. Allegro Con Brio	7:21
+                <input type="text" id="input_title" size="48" value="Symphony No. 5 in C Minor, Op. 67	Beethoven" placeholder="アルバム名" /><br />
+                <textarea id="input_content" placeholder="曲名リスト">I. Allegro Con Brio	7:21
 II. Andante Con Moto	10:01
 III. Scherzo: Allegro	5:08
 IV. Finale: Allegro	11:01</textarea>
             </div></td>
             <td><div id="info_area">
-                <label for="input_background_color">背景色:</label>&nbsp;<input type="color" id="input_background_color" value="#FFFFFF"><br />
+                <label for="input_background_color">背景色:</label>&nbsp;<input type="color" id="input_background_color" value="#FFFFFF" list="background_color_list">
+                <datalist id="background_color_list">
+                    <option value="#ffffff">White</option>
+                    <option value="#D0D0D0">Light Gray</option>
+                    <option value="#C0FFFF">Pale Turquoise</option>
+                    <option value="#FFC0FF">Snuff</option>
+                    <option value="#FFD8C0">Golden Clay</option>
+                    <option value="#FFFFC0">Cumulus</option>
+                    <option value="#C0FFC0">Green Apple</option>
+                    <option value="#C0C0FF">Lavender Blue</option>
+                    <option value="#FFC0C0">Your Pink</option>
+                    <option value="#004080">Dark Cerulean</option>
+                    <option value="#800000">Maroon</option>
+                    <option value="#004000">Myrtle</option>
+                    <option value="#000080">Nave Blue</option>
+                    <option value="#804000">Saddle Brown</option>
+                    <option value="#000000">Black</option>
+                </datalist>
+                <br />
                 文字サイズ:&nbsp;
                     <input type="radio" id="font_size_xsmall" name="font_size" class="font_size_radio" value="xsmall" /><label for="font_size_xsmall">極小</label>&nbsp;
                     <input type="radio" id="font_size_small" name="font_size" class="font_size_radio" value="small" /><label for="font_size_small">小</label>&nbsp;
                     <input type="radio" id="font_size_medium" name="font_size" class="font_size_radio" value="medium" checked="checked" /><label for="font_size_medium">中</label>&nbsp;
-                    <input type="radio" id="font_size_large" name="font_size" class="font_size_radio" value="large" /><label for="font_size_large">大</label><br />
+                    <input type="radio" id="font_size_large" name="font_size" class="font_size_radio" value="large" /><label for="font_size_large">大</label>&nbsp;
+                    <input type="radio" id="font_size_xlarge" name="font_size" class="font_size_radio" value="xlarge" /><label for="font_size_xlarge">極大</label><br />
                 文字揃え:&nbsp;
                 <table class="alignment_table">
                     <tr>
@@ -55,6 +75,9 @@ IV. Finale: Allegro	11:01</textarea>
                         <td><input type="radio" name="alignment" class="alignment_radio" value="bottomright" /></td>
                     </tr>
                 </table>
+                <div class="vertical"><input type="checkbox" id="input_fortyfive_rotate" name="fortyfive_rotate" /><label for="input_fortyfive_rotate">45度傾ける</label><br />
+                <input type="checkbox" id="input_threed_transform" name="threed_transform" /><label for="input_threed_transform">3Dトランスフォーム</label>
+                </div>
                 <hr />
                 <button  onclick="window.print(); return false;">印刷</button >
             </div>
