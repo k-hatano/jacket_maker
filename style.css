@@ -70,19 +70,19 @@ div#face_title.threed_transform {
 	transform: perspective(3.5cm) rotate3d(-1, 1, 0, 20deg) translate(1.8cm, 0);
 }
 
-table#jacket_table.xlarge div#face_title {
+div.xlarge div#face_title {
 	font-size: xx-large;
 }
 
-table#jacket_table.large div#face_title {
+div.large div#face_title {
 	font-size: x-large;
 }
 
-table#jacket_table.small div#face_title {
+div.small div#face_title {
 	font-size: medium;
 }
 
-table#jacket_table.xsmall div#face_title {
+div.xsmall div#face_title {
 	font-size: small;
 }
 
@@ -149,19 +149,19 @@ div#title {
 	-webkit-line-clamp: 3;
 }
 
-table#jacket_table.xlarge div#title {
+div.xlarge div#title {
 	font-size: xx-large;
 }
 
-table#jacket_table.large div#title {
+div.large div#title {
 	font-size: x-large;
 }
 
-table#jacket_table.small div#title {
+div.small div#title {
 	font-size: medium;
 }
 
-table#jacket_table.xsmall div#title {
+div.xsmall div#title {
 	font-size: small;
 }
 
@@ -174,19 +174,19 @@ div#content {
 	font-size: medium;
 }
 
-table#jacket_table.xlarge div#content {
+div.xlarge div#content {
 	font-size: x-large;
 }
 
-table#jacket_table.large div#content {
+div.large div#content {
 	font-size: large;
 }
 
-table#jacket_table.small div#content {
+div.small div#content {
 	font-size: small;
 }
 
-table#jacket_table.xsmall div#content {
+div.xsmall div#content {
 	font-size: x-small;
 }
 

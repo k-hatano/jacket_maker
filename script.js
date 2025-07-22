@@ -2,6 +2,9 @@
 var gAlignment = "center";
 var gFortyFiveRotate = "";
 var gThreeDTransform = "";
+var gBrightness = "light";
+var gFontSizeBack = "medium";
+var gFontSizeFace = "medium";
 
 onload = function() {
     initialize();
@@ -17,8 +20,11 @@ function initialize() {
     Array.from(document.getElementsByClassName("alignment_radio")).forEach(function(item){
         item.addEventListener("click", alignmentChanged);
     });
-    Array.from(document.getElementsByClassName("font_size_radio")).forEach(function(item){
-        item.addEventListener("click", fontSizeChanged);
+    Array.from(document.getElementsByClassName("font_size_back_radio")).forEach(function(item){
+        item.addEventListener("click", fontSizeBackChanged);
+    });
+    Array.from(document.getElementsByClassName("font_size_face_radio")).forEach(function(item){
+        item.addEventListener("click", fontSizeFaceChanged);
     });
     document.getElementById("input_fortyfive_rotate").addEventListener("click", fortyFiveRotateChanged);
     document.getElementById("input_threed_transform").addEventListener("click", threeDTransformChanged);
@@ -35,12 +41,12 @@ function backgroundColorChanged() {
     // var brightness = (r + g + b) / 3;
     var brightness = g;
     if (brightness >= 130) {
-        document.getElementById("face").className = "light";
-        document.getElementById("back").className = "light";
+        gBrightness = "light";
     } else {
-        document.getElementById("face").className = "dark";
-        document.getElementById("back").className = "dark";
+        gBrightness = "dark";
     }
+    document.getElementById("face").className = gBrightness + " " + gFontSizeFace;
+    document.getElementById("back").className = gBrightness + " " + gFontSizeBack;
 }
 
 function contentChanged() {
@@ -106,11 +112,19 @@ function threeDTransformChanged(event) {
     }
 }
 
-function fontSizeChanged(event) {
+function fontSizeBackChanged(event) {
     var fontSize = undefined;
     if (event != undefined && event.target != undefined && event.target.value != undefined) {
-        fontSize = event.target.value;
-        document.getElementById("jacket_table").className = fontSize;
+        gFontSizeBack = event.target.value;
+        document.getElementById("back").className = gBrightness + " " + gFontSizeBack;
+    }
+}
+
+function fontSizeFaceChanged(event) {
+    var fontSize = undefined;
+    if (event != undefined && event.target != undefined && event.target.value != undefined) {
+        gFontSizeFace = event.target.value;
+        document.getElementById("face").className = gBrightness + " " + gFontSizeFace;
     }
 }
 
